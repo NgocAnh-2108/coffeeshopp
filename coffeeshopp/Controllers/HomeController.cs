@@ -1,21 +1,26 @@
 using System.Diagnostics;
+using coffeeshopp.Models.Interfaces;
 using coffeeshopp.Models;
+using CoffeShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace coffeeshopp.Controllers
+namespace CoffeShop.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IProductRepository productRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductRepository productRepository)
         {
             _logger = logger;
+            this.productRepository = productRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+
+            return View(productRepository.GetAllProducts());
         }
 
         public IActionResult Privacy()
