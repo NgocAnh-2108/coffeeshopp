@@ -13,6 +13,9 @@ namespace coffeeshopp.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
         // Khởi tạo dữ liệu mẫu (Seed Data) vào CSDL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

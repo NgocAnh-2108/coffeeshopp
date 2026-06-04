@@ -4,6 +4,7 @@ using coffeeshopp.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using CoffeShop.Models.Services;
 using coffeeshop.Models.Services;
+using coffeeshopp.Models.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<CoffeeshopDbContext>(options =>
 
 builder.Services.AddScoped<IShoppingCartRepository>(sp =>
     ShoppingCartRepository.GetCart(sp));
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();

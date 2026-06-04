@@ -1,0 +1,81 @@
+﻿@model Order
+
+<section class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow border-0 p-5">
+
+                <h2 class="fw-bold mb-4">
+                    Shipping Address
+                </h2>
+
+                <form asp-action="Checkout" method="post">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label asp-for="FirstName"></label>
+
+                            <input asp-for="FirstName"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label asp-for="LastName"></label>
+
+                            <input asp-for="LastName"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label asp-for="Email"></label>
+
+                            <input asp-for="Email"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label asp-for="Phone"></label>
+
+                            <input asp-for="Phone"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="col-12 mb-4">
+
+                            <label asp-for="Address"></label>
+
+                            <input asp-for="Address"
+                                   class="form-control" />
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-warning w-100 py-2">
+
+                        Place Order
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

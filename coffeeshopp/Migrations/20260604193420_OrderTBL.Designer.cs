@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coffeeshopp.Data;
 
@@ -11,9 +12,11 @@ using coffeeshopp.Data;
 namespace coffeeshopp.Migrations
 {
     [DbContext(typeof(CoffeeshopDbContext))]
-    partial class CoffeeshopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260604193420_OrderTBL")]
+    partial class OrderTBL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
