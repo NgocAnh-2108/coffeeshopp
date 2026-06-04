@@ -41,7 +41,7 @@
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <ul class="navbar-nav nav-dropdown ms-auto" data-app-modern-menu="true">
                         <li class="nav-item">
                             <a class="nav-link link text-black show display-4" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -51,6 +51,7 @@
                         <li class="nav-item">
                             <a class="nav-link link text-black show display-4" href="#">Contact</a>
                         </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link link text-black dropdown-toggle show display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                 <span class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
@@ -59,6 +60,14 @@
                                 <a class="text-black show dropdown-item display-4" href="">Register</a>
                                 <a class="text-black show dropdown-item display-4" href="">Login</a>
                             </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black show display-4"
+                               asp-controller="ShoppingCart"
+                               asp-action="Index">
+
+                                <span class="mobi-mbri mobi-mbri-shopping-basket mbr-iconfont mbr-iconfont-btn"></span>
+                            </a>
                         </li>
                     </ul>
                 </div>

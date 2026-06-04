@@ -9,8 +9,11 @@ namespace coffeeshopp.Data
         {
         }
 
+        // Tạo bảng Products trong cơ sở dữ liệu
         public DbSet<Product> Products { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
+        // Khởi tạo dữ liệu mẫu (Seed Data) vào CSDL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -3,14 +3,21 @@ using coffeeshopp.Data;
 using coffeeshopp.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using CoffeShop.Models.Services;
+using coffeeshop.Models.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContext<CoffeeshopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("CoffeeShopDbContextConnection")));
+
+builder.Services.AddScoped<IShoppingCartRepository>(sp =>
+    ShoppingCartRepository.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
@@ -28,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 
